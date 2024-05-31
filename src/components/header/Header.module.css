@@ -1,0 +1,26 @@
+.header {
+    background-color: #001529;
+    position: relative; /* Установка позиции для относительного позиционирования дочерних элементов */
+    height: 64px; /* Высота хедера */
+}
+
+.container {
+    position: absolute; /* Позиционирование контейнера абсолютно относительно родительского элемента */
+    top: 50%; /* Размещение контейнера по вертикали на 50% высоты родительского элемента */
+    right: 10px; /* Отступ справа */
+    transform: translateY(-50%); /* Смещение контейнера на половину его высоты вверх, чтобы центрировать его по вертикали */
+    display: flex;
+    align-items: center;
+}
+
+.buttonLogout {
+    color: #fff;
+    background-color: #1890ff;
+    border-color: #1890ff;
+    margin-left: 0;
+}
+
+.textStyle {
+    font-size: 20px;
+    font-weight: bold;
+}
