@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, CardContent, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
+import styles from './NewsCard.module.css';
 import { NewsItem } from '../types';
 
 interface NewsCardProps {
@@ -7,13 +8,11 @@ interface NewsCardProps {
 }
 
 const NewsCard: React.FC<NewsCardProps> = ({ item }) => (
-  <Card sx={{ marginBottom: 2 }}>
-    <CardContent>
-      <Typography variant="h6" gutterBottom>{item.title}</Typography>
-      <Typography variant="caption" display="block" gutterBottom>{item.date}</Typography>
-      <Typography variant="body2">{item.description}</Typography>
-    </CardContent>
-  </Card>
+  <Box className={styles.card} mb={2}>
+    <Typography variant="h6" gutterBottom>{item.title}</Typography>
+    <Typography variant="caption" display="block" gutterBottom>{item.date}</Typography>
+    <Typography variant="body2">{item.description}</Typography>
+  </Box>
 );
 
 export default NewsCard;
