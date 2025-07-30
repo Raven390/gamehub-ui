@@ -1,24 +1,40 @@
 .container {
-  background: #f6f8fa;
-  color: #24292f;
-  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Roboto', 'Segoe UI', sans-serif;
   min-height: 100vh;
-  padding: 32px 16px;
+  padding: var(--spacing-lg) var(--spacing-md);
 }
 .hero {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: var(--spacing-lg);
 }
 .buttons {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 16px;
-  margin-top: 16px;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
 }
 .button {
   min-width: 160px;
+  border-radius: var(--border-radius);
+  text-transform: none;
+}
+.primary {
+  background: var(--color-primary);
+  color: #fff;
+  border: 1px solid var(--color-primary);
+}
+.primary:hover {
+  background: #0550ae;
+  border-color: #0550ae;
+}
+.secondary {
+  background: #fff;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+.secondary:hover {
+  background: rgba(9, 105, 218, 0.1);
 }
 .section {
-  margin-bottom: 48px;
+  margin-bottom: calc(var(--spacing-lg) * 1.5);
 }

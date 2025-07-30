@@ -1,0 +1,18 @@
+:root {
+    --color-bg: #f6f8fa;
+    --color-text: #24292f;
+    --color-primary: #0969da;
+    --color-card-bg: #ffffff;
+    --card-shadow: 0 1px 3px rgba(27, 31, 35, 0.04);
+    --border-radius: 6px;
+    --spacing-md: 16px;
+    --spacing-lg: 32px;
+}
+
+body {
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', system-ui,
+    sans-serif;
+    margin: 0;
+}

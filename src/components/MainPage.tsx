@@ -22,42 +22,42 @@ interface MainPageProps {
 }
 
 const MainPage: React.FC<MainPageProps> = ({ isAuthenticated }) => (
-  <Box className={styles.container}>
-    <Box className={styles.hero}>
-      <Typography variant="h4" gutterBottom>
-        Добро пожаловать на платформу кооперации!
-      </Typography>
-      <Typography variant="subtitle1" gutterBottom>
-        Здесь находят команды разработчики, геймдизайнеры, художники и другие участники геймдев-проектов
-      </Typography>
-      <Box className={styles.buttons}>
-        {isAuthenticated ? (
-          <>
-            <Button className={styles.button} variant="contained" color="primary">Перейти в профиль</Button>
-            <Button className={styles.button} variant="outlined" color="primary">Создать проект</Button>
-          </>
-        ) : (
-          <>
-            <Button className={styles.button} variant="contained" color="primary">Войти</Button>
-            <Button className={styles.button} variant="outlined" color="primary">Зарегистрироваться</Button>
-          </>
-        )}
+    <Box className={styles.container}>
+      <Box className={styles.hero}>
+        <Typography variant="h4" gutterBottom>
+          Добро пожаловать на платформу кооперации!
+        </Typography>
+        <Typography variant="subtitle1" gutterBottom>
+          Здесь находят команды разработчики, геймдизайнеры, художники и другие участники геймдев-проектов
+        </Typography>
+        <Box className={styles.buttons}>
+          {isAuthenticated ? (
+              <>
+                <Button className={`${styles.button} ${styles.primary}`}>Перейти в профиль</Button>
+                <Button className={`${styles.button} ${styles.secondary}`}>Создать проект</Button>
+              </>
+          ) : (
+              <>
+                <Button className={`${styles.button} ${styles.primary}`}>Войти</Button>
+                <Button className={`${styles.button} ${styles.secondary}`}>Зарегистрироваться</Button>
+              </>
+          )}
+        </Box>
       </Box>
-    </Box>
 
-    <Grid container spacing={4}>
-      <Grid item xs={12} md={6}>
-        <Box className={styles.section}>
-          <NewsList items={mockNews} />
-        </Box>
+      <Grid container spacing={4}>
+        <Grid item xs={12} md={6}>
+          <Box className={styles.section}>
+            <NewsList items={mockNews} />
+          </Box>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Box className={styles.section}>
+            <ProjectList items={mockProjects} />
+          </Box>
+        </Grid>
       </Grid>
-      <Grid item xs={12} md={6}>
-        <Box className={styles.section}>
-          <ProjectList items={mockProjects} />
-        </Box>
-      </Grid>
-    </Grid>
-  </Box>
+    </Box>
 );
 
 export default MainPage;
