@@ -1,0 +1,56 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  padding: 0 24px;
+  background: linear-gradient(180deg, #151c3c 0%, #28346a 100%);
+  color: #fff;
+  font-family: Inter, Segoe UI, Arial, sans-serif;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.btn {
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.outline {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.primary {
+  background: #0969da;
+  border: 1px solid #0969da;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .nav {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .btn {
+    width: 100%;
+  }
+}
