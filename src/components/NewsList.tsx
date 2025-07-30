@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Typography } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 import { NewsItem } from '../types';
 import NewsCard from './NewsCard';
 
@@ -8,7 +8,7 @@ interface NewsListProps {
 }
 
 const NewsList: React.FC<NewsListProps> = ({ items }) => (
-  <div>
+  <Box>
     <Typography variant="h5" gutterBottom>Новости платформы</Typography>
     <Grid container spacing={2}>
       {items.map(item => (
@@ -17,7 +17,7 @@ const NewsList: React.FC<NewsListProps> = ({ items }) => (
         </Grid>
       ))}
     </Grid>
-  </div>
+  </Box>
 );
 
 export default NewsList;

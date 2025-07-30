@@ -1,5 +1,6 @@
 import React from 'react';
-import { Box, Button, Container, Grid, Typography } from '@mui/material';
+import { Box, Button, Grid, Typography } from '@mui/material';
+import styles from './MainPage.module.css';
 import NewsList from './NewsList';
 import ProjectList from './ProjectList';
 import { NewsItem, ProjectItem } from '../types';
@@ -21,24 +22,24 @@ interface MainPageProps {
 }
 
 const MainPage: React.FC<MainPageProps> = ({ isAuthenticated }) => (
-  <Container sx={{ py: 4 }}>
-    <Box textAlign="center" mb={4}>
+  <Box className={styles.container}>
+    <Box className={styles.hero}>
       <Typography variant="h4" gutterBottom>
         Добро пожаловать на платформу кооперации!
       </Typography>
       <Typography variant="subtitle1" gutterBottom>
         Здесь находят команды разработчики, геймдизайнеры, художники и другие участники геймдев-проектов
       </Typography>
-      <Box mt={2}>
+      <Box className={styles.buttons}>
         {isAuthenticated ? (
           <>
-            <Button variant="contained" color="primary" sx={{ mr: 2 }}>Перейти в профиль</Button>
-            <Button variant="outlined" color="primary">Создать проект</Button>
+            <Button className={styles.button} variant="contained" color="primary">Перейти в профиль</Button>
+            <Button className={styles.button} variant="outlined" color="primary">Создать проект</Button>
           </>
         ) : (
           <>
-            <Button variant="contained" color="primary" sx={{ mr: 2 }}>Войти</Button>
-            <Button variant="outlined" color="primary">Зарегистрироваться</Button>
+            <Button className={styles.button} variant="contained" color="primary">Войти</Button>
+            <Button className={styles.button} variant="outlined" color="primary">Зарегистрироваться</Button>
           </>
         )}
       </Box>
@@ -46,13 +47,17 @@ const MainPage: React.FC<MainPageProps> = ({ isAuthenticated }) => (
 
     <Grid container spacing={4}>
       <Grid item xs={12} md={6}>
-        <NewsList items={mockNews} />
+        <Box className={styles.section}>
+          <NewsList items={mockNews} />
+        </Box>
       </Grid>
       <Grid item xs={12} md={6}>
-        <ProjectList items={mockProjects} />
+        <Box className={styles.section}>
+          <ProjectList items={mockProjects} />
+        </Box>
       </Grid>
     </Grid>
-  </Container>
+  </Box>
 );
 
 export default MainPage;
