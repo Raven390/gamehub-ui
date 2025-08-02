@@ -1,0 +1,111 @@
+.bg {
+    min-height: 100vh;
+    background: linear-gradient(120deg, #23263c 0%, #242b4d 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginCard {
+    width: 100%;
+    max-width: 380px;
+    background: rgba(28, 32, 51, 0.98);
+    box-shadow: 0 4px 28px rgba(40,54,100,0.14), 0 1.5px 8px rgba(34,139,243,0.09);
+    border-radius: 26px;
+    padding: 40px 34px 28px 34px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+.logo {
+    font-size: 2.1rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #41a3f5;
+    margin-bottom: 12px;
+    font-family: 'Geist', 'Inter', Arial, sans-serif;
+}
+
+.title {
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 700;
+    margin: 0 0 2px 0;
+    text-align: center;
+    letter-spacing: -0.3px;
+}
+
+.subtitle {
+    color: #8da0c7;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: 400;
+}
+
+.input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1.5px solid #334173;
+    background: #242b4d;
+    color: #e4e9f4;
+    font-size: 1rem;
+    font-family: inherit;
+    margin-bottom: 4px;
+    transition: border 0.17s;
+}
+
+.input:focus {
+    border: 1.5px solid #41a3f5;
+    outline: none;
+}
+
+.loginBtn {
+    width: 100%;
+    padding: 13px;
+    border-radius: 11px;
+    background: linear-gradient(93deg, #41a3f5 40%, #228bf3 100%);
+    color: #fff;
+    font-size: 1.14rem;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 1px 7px rgba(34,139,243,0.10);
+    cursor: pointer;
+    margin-top: 5px;
+    transition: background 0.14s;
+}
+
+.loginBtn:disabled {
+    background: #839fd4;
+    cursor: wait;
+}
+
+.error {
+    color: #d43c3c;
+    font-size: 0.97rem;
+    margin-top: 4px;
+    text-align: center;
+}
+
+.hint {
+    color: #8da0c7;
+    margin-top: 8px;
+    font-size: 0.96rem;
+    text-align: center;
+}
+
+.link {
+    color: #41a3f5;
+    cursor: pointer;
+    margin-left: 5px;
+    font-weight: 500;
+    transition: color 0.18s;
+}
+
+.link:hover {
+    color: #228bf3;
+    text-decoration: underline;
+}

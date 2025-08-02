@@ -154,6 +154,39 @@
   transform: scale(0.97);
 }
 
+.logoutBtn {
+  background: none;
+  border: none;
+  color: #8da0c7;         /* Серо-синий, гармонирует с общим UI */
+  font-size: 15px;
+  font-weight: 500;
+  padding: 0 12px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: color 0.18s, background 0.15s;
+  outline: none;
+}
+
+.logoutBtn:hover,
+.logoutBtn:focus {
+  color: #41a3f5;          /* Акцент при ховере — синий, как у ссылок */
+  background: rgba(65,163,245,0.08); /* Еле заметный фон */
+}
+
+
+.userInfo {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 16px;
+  color: #c3d0e7;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  display: flex;
+  align-items: center;
+  /* Если хочешь чуть отделить, можно добавить padding или gap */
+}
+
+
 /* --- Адаптив --- */
 @media (max-width: 850px) {
   .inner {

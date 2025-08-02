@@ -11,8 +11,11 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
+    "@fontsource/geist": "^5.2.6",
     "@mui/material": "^5.15.13",
+    "@react-keycloak/web": "^3.4.0",
     "geist": "^1.4.2",
+    "keycloak-js": "^26.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.5.0",
