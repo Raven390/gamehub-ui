@@ -1,12 +1,14 @@
-import Header from "./Header";
-import HeroSection from "./HeroSection";
+import Header from "./header/Header";
+import HeroSection from "./hero/HeroSection";
 import ProjectList from "./lists/ProjectList";
 import NewsList from "./lists/NewsList";
-import Footer from "./Footer";
+import Footer from "./footer/Footer";
 import styles from "./LandingPage.module.css";
 import { Project } from "../../types/Project";
 import { NewsItem } from "../../types";
 import LandingCarousel from "./carousel";
+import FeaturesSection from "./features";
+import AuditoryList from "./auditory";
 
 // Моки (замени на fetch, если нужно)
 const mockProjects: Project[] = [
@@ -33,20 +35,22 @@ const LandingPage = () => (
     <>
         <Header />
         <main className={styles.main}>
-            <HeroSection />
-            <LandingCarousel />
+            <HeroSection/>
+            <AuditoryList/>
+            <LandingCarousel/>
+            <FeaturesSection/>
             <section className={styles.section}>
                 <div className={styles.lists}>
                     <div className={styles.listColumn}>
-                        <ProjectList items={mockProjects} />
+                        <ProjectList items={mockProjects}/>
                     </div>
                     <div className={styles.listColumn}>
-                        <NewsList items={mockNews} />
+                        <NewsList items={mockNews}/>
                     </div>
                 </div>
             </section>
         </main>
-        <Footer />
+        <Footer/>
     </>
 );
 

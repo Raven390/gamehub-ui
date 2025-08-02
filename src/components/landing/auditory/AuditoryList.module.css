@@ -1,0 +1,132 @@
+.audienceSection {
+    width: 100%;
+    max-width: 820px;
+    margin: 20px auto 180px auto;
+    padding: 0 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.audienceSection h2 {
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 18px;
+    letter-spacing: 0.01em;
+}
+
+.audienceList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    width: 100%;
+    justify-items: center;
+}
+
+.audienceCard {
+    width: 256px;
+    height: 256px;
+    background: rgba(28, 35, 52, 0.97);
+    border-radius: 28px;
+    box-shadow: 0 2px 24px rgba(34, 139, 243, 0.10);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: box-shadow 0.18s, transform 0.16s;
+    font-weight: 500;
+    text-align: center;
+    padding: 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.audienceCard:hover {
+    box-shadow: 0 6px 24px rgba(65, 163, 245, 0.13);
+    transform: translateY(-2px) scale(1.045);
+}
+
+.audienceCard span {
+    font-size: 1.8rem;
+    margin-bottom: 18px;
+    user-select: none;
+    line-height: 1;
+}
+
+.audienceTitle {
+    font-size: 1.31rem;
+    font-weight: 600;
+    color: #cbe5ff;
+    margin: 0;
+    line-height: 1.23;
+    word-break: break-word;
+    letter-spacing: 0.03em;
+    display: block;
+}
+
+.audienceCard p {
+    display: none;
+}
+
+.audienceCard:hover .cardDescription,
+.audienceCard:focus-within .cardDescription {
+    max-height: 140px;
+    opacity: 1;
+    padding: 14px 16px 10px 16px;
+    pointer-events: auto;
+}
+
+.cardDescription {
+    font-size: 1.03rem;
+    color: #cbe5ff;
+    line-height: 1.4;
+    background: transparent;
+    border-radius: 15px;
+    margin-top: 8px;
+    max-height: 0;
+    opacity: 0;
+    padding: 0 16px;
+    overflow: hidden;
+    pointer-events: none;
+    transition: max-height 0.21s cubic-bezier(.42,1.25,.46,1), opacity 0.19s, padding 0.17s;
+}
+
+/* Адаптив */
+@media (max-width: 900px) {
+    .audienceList {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 600px) {
+    .audienceList {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 13px;
+    }
+    .audienceCard {
+        width: 82px;
+        height: 82px;
+        border-radius: 10px;
+    }
+    .audienceCard span {
+        font-size: 1.3rem;
+        margin-bottom: 5px;
+    }
+    .audienceTitle {
+        font-size: 0.86rem;
+    }
+}
+@media (max-width: 400px) {
+    .audienceList {
+        grid-template-columns: 1fr;
+    }
+}
+/* На мобилке (touch) — описание видно всегда */
+@media (hover: none) and (pointer: coarse) {
+    .cardDescription {
+        max-height: 110px;
+        opacity: 1;
+        padding: 10px 8px 6px 8px;
+        pointer-events: auto;
+    }
+}
