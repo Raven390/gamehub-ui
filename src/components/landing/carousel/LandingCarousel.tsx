@@ -2,10 +2,14 @@ import React, {useState} from "react";
 import styles from "./LandingCarousel.module.css";
 import SlideCard from "./SlideCard";
 
-// Моки для примера (заглушки можно заменить своими)
+// Моки для примера
+// @ts-ignore
 import mockImg1 from "../../../assets/carousel/create-project.png";
+// @ts-ignore
 import mockImg2 from "../../../assets/carousel/team-slots.png";
+// @ts-ignore
 import mockImg3 from "../../../assets/carousel/find-project.png";
+// @ts-ignore
 import mockImg4 from "../../../assets/carousel/cta-end.png";
 
 const slides = [

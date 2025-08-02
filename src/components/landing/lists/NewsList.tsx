@@ -1,6 +1,6 @@
 import React from "react";
 import { NewsItem } from "../../../types/NewsItem";
-import NewsCard from "./NewsCard";
+import NewsCard from "./cards/NewsCard";
 import styles from "./NewsList.module.css";
 
 interface NewsListProps {

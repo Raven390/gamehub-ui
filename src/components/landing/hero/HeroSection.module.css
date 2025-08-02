@@ -71,6 +71,34 @@
   margin-top: 32px;
 }
 
+/* --- Primary signup button --- */
+.signupBtn {
+  background: linear-gradient(90deg, var(--btn-primary) 40%, var(--btn-primary-dark) 100%);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0 26px;
+  height: 50px;
+  font-weight: 700;
+  font-size: 1.4em;
+  margin-left: 12px;
+  box-shadow: 0 2px 8px rgba(20,170,80,0.07);
+  transition: background 0.13s, box-shadow 0.13s, transform 0.13s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.signupBtn:hover, .signupBtn:focus-visible {
+  background: linear-gradient(90deg, var(--btn-primary-hover) 30%, #15b96b 100%);
+  box-shadow: 0 2px 14px rgba(30,230,120,0.09);
+  transform: translateY(-1px) scale(1.03);
+}
+.signupBtn:active {
+  background: linear-gradient(90deg, #10b06a 30%, #129f53 100%);
+  box-shadow: none;
+  transform: scale(0.97);
+}
+
 /* Кнопка ghost-style */
 .btn {
   height: 48px;

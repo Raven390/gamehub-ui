@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './HeroSection.module.css';
-import InputGroup from './InputGroup';
+import InputGroup from './input/InputGroup';
 
 const HeroSection: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -16,18 +16,12 @@ const HeroSection: React.FC = () => {
       <section className={styles.hero}>
         <div className={styles.inner}>
           <h1 className={styles.title}>
-            Платформа для командной разработки
+            Воплоти идею вместе с единомышленниками
           </h1>
           <p className={styles.subtitle}>
-            🚀 Находи проекты, объединяйся в команды, развивай свои навыки вместе с комьюнити
+            🚀 Легко находи команду и доводи проект до результата — с поддержкой живого комьюнити.
           </p>
-          <InputGroup
-              value={email}
-              onChange={handleChange}
-              onSubmit={handleSubmit}
-              placeholder="Введите e-mail"
-              buttonLabel="SignUp"
-          />
+          <button className={styles.signupBtn}>Найти команду</button>
         </div>
       </section>
   );
