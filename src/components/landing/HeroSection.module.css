@@ -1,0 +1,135 @@
+:root {
+  --hero-gradient-top: #21263b;
+  --hero-gradient-bottom: #182032;
+  --border-radius: 18px;
+  --ghost-border: #e0e6ee;
+  --ghost-hover: rgba(255,255,255,0.13);
+}
+
+.hero {
+  background: none;
+  color: var(--text-main, #fff);
+  min-height: 64vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 70px 0 60px 0;
+  text-align: center;
+}
+
+.inner {
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+  animation: fadeInUp 0.9s cubic-bezier(.42,0,.58,1) 0.08s both;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(34px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+.iconWrap {
+  background: linear-gradient(135deg, #dcfce7 0%, #a7f3d0 100%);
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 32px auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 32px rgba(22,163,74,0.09);
+}
+
+.icon {
+  width: 44px;
+  height: 44px;
+  display: block;
+}
+
+.title {
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.07;
+  margin: 0 0 18px 0;
+  letter-spacing: -1px;
+  color: #e9eef5;
+  text-shadow: 0 2px 8px rgba(22, 40, 80, 0.12);
+}
+
+
+.subtitle {
+  font-size: 20px;
+  color: #b2c4d9;
+  margin: 0 auto 36px auto;
+  max-width: 470px;
+  letter-spacing: 0.01em;
+  line-height: 1.45;
+}
+
+.belowForm {
+  margin-top: 32px;
+}
+
+/* Кнопка ghost-style */
+.btn {
+  height: 48px;
+  min-width: 210px;
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  border: 1.6px solid var(--ghost-border);
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  box-shadow: none;
+  transition: background 0.18s, color 0.18s, box-shadow 0.15s, border 0.18s;
+  outline: none;
+  position: relative;
+}
+.ghost:hover,
+.btn.ghost:hover {
+  background: var(--ghost-hover);
+  color: #e0e6ee;
+  border-color: #a7f3d0;
+}
+.btn:focus-visible {
+  outline: 2px solid #34d399;
+  outline-offset: 2px;
+}
+
+/* Для адаптива */
+@media (max-width: 600px) {
+  .hero {
+    padding: 38px 0 14px;
+  }
+  .iconWrap {
+    width: 54px;
+    height: 54px;
+    margin-bottom: 22px;
+  }
+  .icon {
+    width: 32px;
+    height: 32px;
+  }
+  .title {
+    font-size: 2em;
+    margin-bottom: 15px;
+  }
+  .subtitle {
+    font-size: 1em;
+    margin-bottom: 22px;
+  }
+  .belowForm {
+    margin-top: 18px;
+    min-width: 120px;
+    font-size: 16px;
+    height: 44px;
+  }
+  .inner {
+    padding: 0 10px;
+  }
+}

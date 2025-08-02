@@ -1,13 +1,6 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import MainPage from './components/MainPage';
+import LandingPage from './components/landing/LandingPage';
 
-const App: React.FC = () => (
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<MainPage isAuthenticated={false} />} />
-    </Routes>
-  </BrowserRouter>
-);
+const App: React.FC = () => <LandingPage />;
 
 export default App;

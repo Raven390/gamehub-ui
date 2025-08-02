@@ -1,0 +1,27 @@
+.newsSection {
+    width: 100%;
+}
+
+.title {
+    margin-bottom: 22px;
+    font-size: 1.38em;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.5px;
+}
+
+.newsGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+@media (max-width: 700px) {
+    .title {
+        font-size: 1.12em;
+        margin-bottom: 14px;
+    }
+    .newsGrid {
+        gap: 11px;
+    }
+}

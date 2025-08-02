@@ -1,0 +1,48 @@
+.card {
+  background: rgba(34, 38, 48, 0.88);
+  border-radius: 18px;
+  padding: 22px 28px;
+  transition: box-shadow 0.17s, background 0.13s, border 0.13s, transform 0.14s;
+  border: 1.5px solid transparent;
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+}
+.card:hover {
+  background: rgba(38,44,56,0.98);
+  box-shadow:
+          0 8px 28px 0 rgba(28, 46, 100, 0.15),
+          0 0 24px 0 rgba(80,220,255,0.09);
+  border-color: #2341a1;
+  transform: translateY(-2px) scale(1.013);
+}
+
+.cardContent {
+  flex: 1 1 0;
+}
+
+.cardTitle {
+  font-weight: 700;
+  font-size: 1.11em;
+  margin-bottom: 8px;
+  color: #fff;
+  letter-spacing: -0.4px;
+  word-break: break-word;
+}
+
+.cardDate {
+  font-size: 0.98em;
+  color: #8aa0bd;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.cardDesc {
+  color: #bbc6d6;
+  font-size: 1em;
+  line-height: 1.44;
+}
+
+@media (max-width: 700px) {
+  .card { padding: 13px 10px; }
+}
