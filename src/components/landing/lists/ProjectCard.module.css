@@ -1,0 +1,41 @@
+.card {
+  background: #181b21;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.card:hover {
+  background: rgba(38,44,56,0.98);
+  box-shadow:
+          0 8px 28px 0 rgba(28, 46, 100, 0.15),
+          0 0 24px 0 rgba(80,220,255,0.09);
+  border-color: #2341a1;
+  transform: translateY(-2px) scale(1.013);
+}
+
+.iconPlaceholder {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: #232a37;
+  margin-right: 12px;
+}
+.name {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+.statusRow {
+  font-size: 13px;
+  color: #adb2ba;
+  display: flex;
+  gap: 10px;
+}
+.status {
+  background: #252c3a;
+  border-radius: 5px;
+  padding: 1px 8px;
+}

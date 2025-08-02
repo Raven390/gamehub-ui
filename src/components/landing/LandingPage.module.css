@@ -1,0 +1,74 @@
+.main {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    background: none;
+}
+
+.section {
+    width: 100%;
+    margin-top: 54px;
+    padding-bottom: 54px;
+    display: flex;
+    justify-content: center;
+    background: none;
+}
+
+.lists {
+    display: flex;
+    justify-content: space-between;  /* <-- разносит колонки к краям */
+    align-items: flex-start;
+    gap: 32px;              /* минимальный отступ между ними, не 96px */
+    max-width: 1280px;      /* ширина контентного блока */
+    margin: 0 auto;         /* центрирует на странице */
+    padding: 0 32px;        /* боковые отступы для мобильных/узких экранов */
+    width: 100%;
+}
+
+.listColumn {
+    flex: 1 1 0;
+    min-width: 320px;
+    max-width: 48%;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 1100px) {
+    .lists {
+        max-width: 98vw;
+        gap: 24px;
+    }
+    .section {
+        margin-top: 30px;
+        padding-bottom: 26px;
+    }
+}
+
+@media (max-width: 850px) {
+    .lists {
+        flex-direction: column;
+        gap: 22px;
+        max-width: 100vw;
+        padding: 0 2vw;
+    }
+    .listColumn {
+        min-width: 0;
+        max-width: 100%;
+        padding: 0;
+    }
+    .section {
+        margin-top: 18px;
+        padding-bottom: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .lists {
+        gap: 9px;
+        padding: 0 3px;
+    }
+    .section {
+        margin-top: 6px;
+        padding-bottom: 0;
+    }
+}

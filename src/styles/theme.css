@@ -1,20 +1,42 @@
+@import "@fontsource/geist/400.css";
+@import "@fontsource/geist/700.css";
+
+
 :root {
-    --color-bg: #f6f8fa;
-    --color-text: #24292f;
-    --color-primary: #0969da;
-    --color-card-bg: #ffffff;
-    --card-shadow: 0 1px 3px rgba(27, 31, 35, 0.04);
-    --border-radius: 6px;
-    --spacing-md: 16px;
-    --spacing-lg: 32px;
-    --max-width: 800px;
+    --primary: #2578f7;
+    --primary-hover: #388bfa;
+    --background: #161d2b;
+    --hero-gradient-top: #222a44;
+    --hero-gradient-bottom: #172035;
+    --card: #232b41;
+    --card-border: #222a44;
+    --text-main: #fff;
+    --text-light: #aab6cf;
+    --white: #fff;
+    --muted: #b2bed3;
+    --border-radius: 16px;
+    --radius: 16px;
+    --max-width: 1160px;
+    --main-bg: #161d2b;
+    --spacing-sm: 12px;
+    --spacing-md: 24px;
+    --spacing-lg: 56px;
+    --shadow: 0 4px 24px 0 rgba(20,30,40,0.10);
+    --surface-alt: #252d45;
 }
 
-body {
-    background: var(--color-bg);
-    color: var(--color-text);
-    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', system-ui,
-    sans-serif;
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
     margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    background: linear-gradient(180deg, #232947 0%, #1a1f33 100%);
+    overflow-x: hidden;
+    font-family: "Geist", cursive
 }
 
