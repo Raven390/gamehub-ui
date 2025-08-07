@@ -167,6 +167,26 @@
 .membersIcon {
     margin-right: 1px;
 }
+.typeBadge {
+    display: inline-block;
+    min-width: 74px;
+    text-align: center;
+    padding: 5px 16px 4px 16px;
+    margin-left: 10px;
+    margin-right: 12px; /* чуть отодвигаем от кнопки */
+    border-radius: 13px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #fff;
+    background: #288bf2;   /* основной badge-цвет, либо подбери по бренд-гайду */
+    opacity: 0.92;
+    box-shadow: 0 1px 6px rgba(34,139,243,0.06);
+    vertical-align: middle;
+    line-height: 1.15;
+    letter-spacing: 0.01em;
+}
+
+
 .detailsBtn {
     margin-left: auto;
     background: #228bf3;
