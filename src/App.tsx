@@ -9,6 +9,7 @@ import Register from './pages/Register';
 import Projects from "./pages/Projects";
 import PrivateRoute from "./components/PrivateRoute";
 import ProjectExplorer from "./pages/ProjectExplorer/ProjectExplorer";
+import ProjectFormPage from "./pages/ProjectForm/ProjectFormPage";
 
 const App = () => (
         <BrowserRouter>
@@ -21,8 +22,11 @@ const App = () => (
                 {/* Приватные роуты */}
                 <Route element={<PrivateRoute />}>
                     <Route path="/projects" element={<ProjectExplorer />} />
+                    <Route path="/projects/create" element={<ProjectFormPage />} />
+
                     {/* Добавляй сюда любые защищённые маршруты */}
                 </Route>
+
 
             </Routes>
         </BrowserRouter>

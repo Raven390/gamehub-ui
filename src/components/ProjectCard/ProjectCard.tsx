@@ -24,6 +24,7 @@ interface ProjectCardProps {
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
     const techs = project.technologyNames || [];
     const roles = project.roleNames || [];
+    const type = project.typeName || '';
     const visibleTechs = techs.slice(0, 3);
     const techMore = techs.length > 3 ? techs.length - 3 : 0;
     const visibleRoles = roles.slice(0, 2);
@@ -107,6 +108,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) =>
                     </svg>
                     <span>{project.membersCount ?? 1}</span>
                 </div>
+                {project.typeName && (
+                    <span className={styles.typeBadge}>
+                        {project.typeName}
+                    </span>
+                )}
                 <button
                     className={styles.detailsBtn}
                     onClick={(e) => { e.stopPropagation(); /* переход на детали */ }}

@@ -1,0 +1,36 @@
+.btn {
+    min-width: 140px;
+    height: 48px;
+    padding: 0 32px;
+    background: #228bf3;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    border-radius: 24px;
+    font-size: 1.05rem;
+    box-shadow: 0 2px 14px rgba(34,139,243,0.09);
+    cursor: pointer;
+    transition: background .15s, box-shadow .13s, color .12s;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.btn:hover, .btn:focus-visible {
+    background: #41a3f5;
+}
+.btn:disabled {
+    background: #cbe1fa;
+    color: #8ca5cc;
+    cursor: not-allowed;
+}
+.loader {
+    width: 22px;
+    height: 22px;
+    border: 3px solid #fff;
+    border-bottom-color: #228bf3;
+    border-radius: 50%;
+    animation: spin .6s linear infinite;
+}
+@keyframes spin { 100% { transform: rotate(360deg); } }

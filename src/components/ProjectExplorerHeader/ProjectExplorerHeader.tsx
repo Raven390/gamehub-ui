@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from './ProjectExplorerHeader.module.css';
 import { useAuth } from '../../auth/AuthContext';
+import { useNavigate } from "react-router-dom";
 
 export const ProjectExplorerHeader: React.FC = () => {
     const { user, logout } = useAuth();
-
+    const navigate = useNavigate();
     return (
         <header className={styles.header}>
             <div className={styles.left}>
@@ -16,7 +17,8 @@ export const ProjectExplorerHeader: React.FC = () => {
                 </nav>
             </div>
             <div className={styles.right}>
-                <button className={styles.createBtn} title="Создать новый проект">
+                <button className={styles.createBtn} title="Создать новый проект"
+                        onClick={() => navigate('/projects/create')}>
                     + Создать проект
                 </button>
                 <div className={styles.avatarMenu}>

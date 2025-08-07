@@ -1,0 +1,71 @@
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    position: relative;
+}
+
+.label {
+    font-size: 1.5rem;
+    color: #b2bed3;         /* Более нейтральный, не чёрный */
+    font-weight: 600;
+    margin-bottom: 8px;
+    letter-spacing: 0.01em;
+    width: 100%;
+}
+
+.input {
+    width: 100%;
+    font-size: 1.11rem;
+    padding: 15px 18px;
+    border: 1.7px solid var(--card-border, #232a3b);
+    border-radius: 18px;
+    outline: none;
+    transition: border-color .16s, background .14s;
+    background: var(--surface-alt, #252d45);
+    color: var(--text-main, #fff);
+    font-weight: 500;
+    box-sizing: border-box;
+    min-height: 52px;
+    box-shadow: none;
+    margin-top: 8px;
+}
+.input::placeholder { color: #8fa0c6; opacity: 1; }
+.input:focus {
+    border-color: var(--primary, #2578f7);
+    background: #232a3b;
+}
+.inputError {
+    border-color: #e54646;
+}
+
+.counter {
+    display: block;
+    font-size: 12px;
+    color: #aab6cf;
+    text-align: right;
+    margin-top: 4px;
+    margin-bottom: -2px;
+    padding-right: 2px;
+    font-weight: bold;
+}
+
+.inputError + .counter {
+    color: #e54646;
+    font-weight: bold;
+}
+
+.error {
+    color: #e54646;
+    font-size: 0.98rem;
+    margin-top: 4px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.error:before {
+    content: "⚠️";
+    font-size: 1em;
+    margin-right: 2px;
+}

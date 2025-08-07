@@ -1,6 +1,7 @@
 import {apiFetch, FetchProjectsParams} from './http';
 import { Project } from '../types/Project';
 import {ProjectPageResponse} from "../types/ProjectPageResponse";
+import {ProjectCreate} from "../types/ProjectCreate";
 
 
 export async function fetchProjects(params: FetchProjectsParams = {}): Promise<ProjectPageResponse> {
@@ -14,16 +15,18 @@ export async function fetchProjects(params: FetchProjectsParams = {}): Promise<P
     return apiFetch<ProjectPageResponse>(`/projects?${query.toString()}`, { method: 'GET' });
 }
 
-export async function createProject(project: Partial<Project>): Promise<Project> {
-    return apiFetch<Project>('/project', {
+export async function createProject(project: Partial<ProjectCreate>): Promise<Project> {
+    console.log(JSON.stringify(project));
+    return apiFetch<Project>('/projects', {
         method: 'POST',
         body: JSON.stringify(project),
     });
+
 }
 
 
 export async function updateProject(id: number, update: Partial<Project>): Promise<Project> {
-    return apiFetch<Project>(`/project/${id}`, {
+    return apiFetch<Project>(`/projects/${id}`, {
         method: 'PUT',
         body: JSON.stringify(update),
     });
@@ -31,5 +34,5 @@ export async function updateProject(id: number, update: Partial<Project>): Promi
 
 // Новый: удалить проект (DELETE)
 export async function deleteProject(id: number): Promise<void> {
-    await apiFetch(`/project/${id}`, { method: 'DELETE' });
+    await apiFetch(`/projects/${id}`, { method: 'DELETE' });
 }
