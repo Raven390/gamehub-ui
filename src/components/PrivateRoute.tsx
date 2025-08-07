@@ -3,8 +3,10 @@ import { useAuth } from '../auth/AuthContext';
 import React from "react";
 
 const PrivateRoute: React.FC = () => {
-    const { user } = useAuth();
+    const { user, loading } = useAuth();
     const location = useLocation();
+
+    if (loading) return null;
 
     return user ? (
         <Outlet />

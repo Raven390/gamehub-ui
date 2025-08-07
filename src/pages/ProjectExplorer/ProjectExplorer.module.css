@@ -1,0 +1,173 @@
+.root {
+    min-height: 100vh;
+    background: #181c27;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 32px 16px 48px;
+    box-sizing: border-box;
+}
+
+.filtersSection {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    position: sticky;
+    top: 68px; /* как в header */
+    z-index: 2;
+    background: #181c27;
+    padding: 18px 0 14px 0;
+    border-bottom: 1px solid #232841;
+}
+
+.searchInput {
+    flex: 1 1 350px;
+    max-width: 480px;
+    min-width: 220px;
+    font-size: 1.13rem;
+    padding: 14px 22px 14px 44px;
+    border: none;
+    border-radius: 22px;
+    background: #23273a;
+    color: #e6ecfe;
+    outline: none;
+    font-weight: 500;
+    box-shadow: 0 2px 14px rgba(34,139,243,0.04);
+    position: relative;
+    transition: background .13s, box-shadow .12s;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>');
+    background-repeat: no-repeat;
+    background-position: 16px 50%;
+    background-size: 22px 22px;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+    align-items: center;
+    margin-left: 32px;
+    min-width: 320px;
+}
+
+
+.filter {
+    background: #232c47;
+    color: #80a6e8;
+    padding: 4px 14px;
+    border-radius: 12px;
+    font-size: 0.98rem;
+    font-weight: 500;
+    opacity: 0.88;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: none;
+    border: none;
+    transition: background .12s, color .12s;
+}
+
+.filter:hover, .filter:focus-visible {
+    background: #293b65;
+    color: #41a3f5;
+}
+
+.resetBtn {
+    background: none;
+    border: none;
+    color: #8fa0d1;
+    padding: 4px;
+    border-radius: 50%;
+    margin-left: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+    transition: background .13s;
+}
+.resetBtn:hover, .resetBtn:focus-visible {
+    background: #20273a;
+    color: #228bf3;
+}
+.resetBtn svg {
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+}
+.cardsSection {
+    margin-top: 24px;
+    min-height: 280px;
+}
+
+.cardsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    width: 100%;
+}
+
+.cardSkeleton {
+    min-height: 192px;
+    background: linear-gradient(90deg,#212436 70%,#1a1e2a 100%);
+    border-radius: 22px;
+    animation: shimmer 1.3s infinite linear;
+}
+@keyframes shimmer {
+    0% { background-position-x: -140px; }
+    100% { background-position-x: 140px; }
+}
+
+.emptyBlock, .errorBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 36px 0;
+    color: #a9b5d6;
+    gap: 16px;
+}
+.createBtn {
+    background: #228bf3;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 22px;
+    padding: 12px 30px;
+    font-size: 1.04rem;
+    cursor: pointer;
+    margin-top: 14px;
+    transition: background .15s;
+}
+.createBtn:hover {
+    background: #41a3f5;
+}
+
+
+
+/* Адаптив: до 800px — две карточки, до 500px — одна */
+
+@media (max-width: 800px) {
+    .filtersSection {
+        flex-direction: column;
+        gap: 10px;
+        padding: 11px 0 9px 0;
+    }
+    .filters {
+        margin-left: 0;
+        min-width: unset;
+    }
+    .searchInput {
+        max-width: 100%;
+        min-width: 0;
+        font-size: 1.05rem;
+    }
+}
+@media (max-width: 500px) {
+    .cardsGrid { grid-template-columns: 1fr; }
+}
+

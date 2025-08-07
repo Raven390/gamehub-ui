@@ -1,16 +1,11 @@
+// @ts-ignore
 import Keycloak from 'keycloak-js';
+import { KEYCLOAK_URL, KEYCLOAK_REALM, KEYCLOAK_CLIENT } from '../config';
 
-let kcInstance: Keycloak.KeycloakInstance | undefined = undefined;
+const keycloak = new Keycloak({
+    url: KEYCLOAK_URL,
+    realm: KEYCLOAK_REALM,
+    clientId: KEYCLOAK_CLIENT,
+});
 
-const getKeycloak = () => {
-    if (!kcInstance) {
-        kcInstance = new Keycloak({
-            url: 'http://localhost:80',
-            realm: 'gamehub',
-            clientId: 'frontend-app',
-        });
-    }
-    return kcInstance;
-};
-
-export default getKeycloak();
+export default keycloak;

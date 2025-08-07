@@ -1,6 +1,6 @@
 import React from 'react';
 import { useAuth } from '../auth/AuthContext'; // или zustand/store
-import Header from '../components/header/Header';
+import Header from '../components/landing/header/Header';
 
 // Моки (потом заменим на fetch с бекенда)
 const mockProjects = [

@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../auth/AuthContext";
-import Header from "../header/Header";
+import Header from "../landing/header/Header";
 import HeroSection from "./hero/HeroSection";
 import ProjectList from "./lists/ProjectList";
 import NewsList from "./lists/NewsList";
-import Footer from "../footer/Footer";
+import Footer from "../landing/footer/Footer";
 import styles from "./LandingPage.module.css";
 import { Project } from "../../types/Project";
 import { NewsItem } from "../../types";

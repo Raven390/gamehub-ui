@@ -1,0 +1,194 @@
+.card {
+    max-width: 580px;
+    display: flex;
+    flex-direction: column;
+    background: #21263a;
+    border-radius: 22px;
+    padding: 32px 32px 28px 32px;
+    min-height: 420px;
+    border: 1.5px solid transparent;
+    cursor: pointer;
+    transition: box-shadow 0.18s, border-color 0.15s, transform 0.14s;
+    outline: none;
+    gap: 0;
+}
+.card:hover, .card:focus-visible {
+    box-shadow: 0 8px 34px rgba(34,139,243,0.14);
+    border-color: #228bf3;
+    transform: translateY(-2px) scale(1.012);
+}
+
+.headerRow {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+.title {
+    font-size: 1.36rem;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.18;
+    max-width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    letter-spacing: 0.01em;
+}
+.status {
+    font-size: 0.82rem;
+    font-weight: 800;
+    border-radius: 10px;
+    padding: 2.5px 11px 3px 11px;
+    color: #fff;
+    min-width: 62px;
+    background: #228bf3;
+    margin-left: 6px;
+    opacity: 0.93;
+    letter-spacing: 0.01em;
+    align-self: flex-start;
+    box-shadow: none; /* убираем "тяжёлость" */
+}
+
+.labelsRow, .rolesRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 6px;
+}
+.labelsRow { margin-top: 2px; }
+.rolesRow { margin-bottom: 10px; }
+.tech, .role {
+    background: #232e45;
+    color: #64d5ff;
+    font-size: 0.96rem;
+    font-weight: 600;
+    padding: 2.5px 11px;
+    border-radius: 9px;
+    user-select: none;
+    opacity: 0.92;
+    border: none;
+    transition: background .12s, color .12s;
+    display: inline-block;
+    max-width: 220px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.role {
+    background: #332b18;
+    color: #ffb859;
+}
+.techMore, .roleMore {
+    background: #2a425b;
+    color: #c3e7ff;
+    font-size: 0.93rem;
+    padding: 2.5px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    opacity: 0.85;
+}
+
+.descBox {
+    background: rgba(255,255,255,0.025);
+    border-radius: 13px;
+    margin-bottom: 0;
+    padding: 19px 17px 16px 17px;
+    min-height: 82px;
+    max-height: 200px;
+    box-sizing: border-box;
+}
+.desc {
+    font-size: 1.10rem;
+    color: #f4f7fb;
+    font-weight: 400;
+    line-height: 1.67;
+    min-height: 62px;
+    max-height: 200px; /* 4-5 строк */
+    overflow: hidden;
+    position: relative;
+    letter-spacing: 0.01em;
+}
+.desc span {
+    display: block;
+    word-break: break-word;
+}
+
+
+.cardFooter {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    margin-top: auto;
+    margin-bottom: 0;
+    width: 100%;
+}
+.owner {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    min-width: 0;
+}
+.avatar, .avatarFallback {
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #233e6c;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.09rem;
+    border: 2.2px solid #228bf3;
+    user-select: none;
+}
+.ownerName {
+    color: #bed3f5;
+    font-size: 0.97rem;
+    font-weight: 500;
+    max-width: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.members {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    color: #228bf3;
+    font-weight: 600;
+    font-size: 0.98rem;
+    margin-left: 12px;
+}
+.membersIcon {
+    margin-right: 1px;
+}
+.detailsBtn {
+    margin-left: auto;
+    background: #228bf3;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    padding: 9px 23px;
+    border-radius: 12px;
+    font-size: 1.01rem;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(34,139,243,0.06);
+    transition: background .13s, color .13s, box-shadow .12s;
+    outline: none;
+}
+.detailsBtn:hover, .detailsBtn:focus-visible {
+    background: #41a3f5;
+}
+
+@media (max-width: 950px) {
+    .card { padding: 18px 8px 18px 10px; min-height: 290px; }
+    .descBox { padding: 11px 7px 8px 7px; }
+    .title { font-size: 1.04rem; }
+    .desc { font-size: 0.96rem; }
+    .ownerName { max-width: 48px; }
+}
