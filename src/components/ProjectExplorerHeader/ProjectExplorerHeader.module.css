@@ -1,0 +1,133 @@
+.header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background: #181c27;
+    display: flex;
+    align-items: center;  /* точное выравнивание всего по центру */
+    justify-content: space-between;
+    padding: 0 36px;
+    height: 68px; /* чуть выше для баланса и крупных кнопок */
+    border-bottom: 1px solid #24293c;
+    box-sizing: border-box;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+
+.logo {
+    color: #228bf3;
+    font-weight: 700;
+    font-size: 1.34rem;
+    letter-spacing: 1px;
+    text-decoration: none;
+    margin-right: 32px;
+    transition: opacity .15s;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    height: 44px;
+}
+.logo:hover { opacity: .85; }
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    height: 44px;
+}
+
+.link {
+    color: #c3d0e7;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.08rem;
+    padding: 10px 0 9px 0;
+    border-bottom: 2.5px solid transparent;
+    border-radius: 2px;
+    transition: color .15s, border-color .14s;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    height: 44px;
+}
+.link:hover { color: #41a3f5; }
+.active {
+    color: #228bf3;
+    border-bottom: 2.5px solid #228bf3;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    height: 44px;
+}
+
+.createBtn {
+    background: #228bf3;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    border-radius: 24px;
+    padding: 12px 28px;
+    font-size: 1.07rem;
+    box-shadow: none;
+    outline: none;
+    cursor: pointer;
+    letter-spacing: 0.01em;
+    transition: background .15s, box-shadow .14s, transform .11s;
+    display: flex;
+    align-items: center;
+    height: 44px;
+}
+.createBtn:hover, .createBtn:focus-visible {
+    background: #41a3f5;
+    box-shadow: 0 2px 14px rgba(34,139,243,0.14);
+    transform: translateY(-1px) scale(1.02);
+}
+.createBtn:active {
+    background: #1c71d8;
+}
+
+.avatarMenu {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    height: 44px;
+}
+
+.avatar {
+    background: #24293c;
+    color: #41a3f5;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.15rem;
+    user-select: none;
+    transition: background .15s, box-shadow .12s;
+    border: 2.5px solid #1d2230;
+    box-shadow: none;
+}
+.avatarMenu:hover .avatar,
+.avatarMenu:focus-visible .avatar {
+    background: #20273c;
+    box-shadow: 0 1px 6px rgba(34,139,243,0.08);
+}
+
+@media (max-width: 600px) {
+    .header { padding: 0 12px; }
+    .left { gap: 14px; }
+    .nav { gap: 12px; }
+    .right { gap: 12px; }
+    .createBtn { padding: 9px 16px; font-size: 0.99rem; }
+    .avatar { width: 36px; height: 36px; }
+}

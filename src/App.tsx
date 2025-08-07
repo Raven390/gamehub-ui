@@ -8,17 +8,9 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Projects from "./pages/Projects";
 import PrivateRoute from "./components/PrivateRoute";
+import ProjectExplorer from "./pages/ProjectExplorer/ProjectExplorer";
 
 const App = () => (
-    <ReactKeycloakProvider
-        authClient={keycloak}
-        initOptions={{
-            onLoad: 'check-sso',
-            checkLoginIframe: false, // Отключает iframe (рекомендую на dev)
-        }}
-        onEvent={(event, error) => console.log('Keycloak event:', event, error)}
-        onTokens={tokens => console.log('Keycloak tokens:', tokens)}
-    >
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Landing />} />
@@ -28,13 +20,12 @@ const App = () => (
 
                 {/* Приватные роуты */}
                 <Route element={<PrivateRoute />}>
-                    <Route path="/projects" element={<Projects />} />
+                    <Route path="/projects" element={<ProjectExplorer />} />
                     {/* Добавляй сюда любые защищённые маршруты */}
                 </Route>
 
             </Routes>
         </BrowserRouter>
-    </ReactKeycloakProvider>
 );
 
 export default App;

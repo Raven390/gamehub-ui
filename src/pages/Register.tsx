@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { registerUser } from '../api/AuthApi';
 import styles from './Register.module.css';
 
 const KEYCLOAK_USER_API = 'http://localhost:8080/admin/realms/gamehub/users'; // Это admin endpoint
 
 const Register: React.FC = () => {
-    const [username, setUsername] = useState('');
+    const [name, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
@@ -22,14 +23,11 @@ const Register: React.FC = () => {
         setSuccess(false);
 
         try {
-            // Для MVP: регистрация через публичный flow Keycloak не поддерживается!
-            // Надо либо включить self-registration на Keycloak UI (и звать keycloak.register()), либо пилить регистрацию через backend-прокси.
-            // Здесь эмулируем успешную регистрацию (MVP-стаб).
-            await new Promise(resolve => setTimeout(resolve, 1200));
+            await registerUser({ name, email, password });
             setSuccess(true);
             setTimeout(() => navigate('/login'), 1400);
-        } catch (err) {
-            setError('Ошибка регистрации, попробуйте позже');
+        } catch (err: any) {
+            setError(err.message || 'Ошибка регистрации');
         } finally {
             setLoading(false);
         }
@@ -45,7 +43,7 @@ const Register: React.FC = () => {
                 <input
                     type="text"
                     placeholder="Имя пользователя"
-                    value={username}
+                    value={name}
                     onChange={e => setUsername(e.target.value)}
                     required
                     className={styles.input}

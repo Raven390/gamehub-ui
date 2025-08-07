@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './Header.module.css';
 import {useNavigate} from "react-router-dom";
-import {useAuth} from '../../auth/AuthContext';
-import Avatar from '../avatar/Avatar';
+import {useAuth} from '../../../auth/AuthContext';
+import Avatar from '../../avatar/Avatar';
 
 const Header: React.FC = () => {
     const navigate = useNavigate();

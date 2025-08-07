@@ -1,7 +1,14 @@
 export interface Project {
-    id: number;
+    id: string;
     name: string;
-    status: string;
-    time: string;
-    icon?: string; // теперь иконка может быть, а может и не быть
+    description: string;
+    shortDescription: string;
+    technologyNames?: string[];
+    roleNames?: string[];
+    typeName?: string;
+    status?: 'DRAFT' | 'ACTIVE' | 'RECRUITING' | 'ARCHIVED';
+    membersCount?: number;
+    ownerName: string;
+    avatarUrl?: string;
+    createdAt?: string;
 }
