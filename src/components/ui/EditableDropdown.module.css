@@ -1,0 +1,163 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.label {
+    color: var(--label, #b2bed3);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* Отображаемое значение */
+.displayField {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    min-height: 38px;
+    font-size: 15px;
+    cursor: default;
+    padding: 6px 10px;
+    border-radius: var(--radius, 12px);
+    transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.editable {
+    cursor: pointer;
+}
+
+.editable:hover,
+.editable:focus {
+    background: var(--surface-hover, #1d2332);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
+    outline: none;
+}
+
+/* Бейджи */
+.badge {
+    display: inline-block;
+    border-radius: 10px;
+    padding: 4px 15px;
+    font-size: 15px;
+    font-weight: 500;
+    background: var(--badge-bg, #212943);
+    color: var(--badge, #8ab8ff);
+    transition: background 0.15s, color 0.15s;
+}
+
+.badge.draft {
+    background: #292858;
+    color: #a393f7;
+}
+.badge.active {
+    background: #153822;
+    color: #41e09c;
+}
+.badge.recruiting {
+    background: #4c3c11;
+    color: #ffe38f;
+}
+.badge.archived {
+    background: #232842;
+    color: #a1a1b3;
+}
+
+.editIcon {
+    opacity: 0.4;
+    color: var(--muted, #b2bed3); /* цвет из темы */
+    fill: currentColor; /* для SVG */
+    transition: opacity 0.18s, transform 0.18s;
+    margin-left: 5px;
+}
+
+.editable:hover .editIcon,
+.editable:focus .editIcon {
+    opacity: 1;
+    color: var(--primary, #2578f7); /* при hover */
+}
+
+
+/* Состояние "сохранено" */
+.saved {
+    color: #58dfb7;
+    font-size: 18px;
+    margin-left: 7px;
+    animation: fadeInOut 1.1s;
+}
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    85% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Dropdown */
+.dropdownWrap {
+    position: relative;
+}
+
+.dropdown {
+    position: absolute;
+    z-index: 40;
+    top: 0;
+    left: 0;
+    min-width: 180px;
+    background: var(--card, #232b41);
+    border-radius: var(--radius, 12px);
+    box-shadow: 0 8px 30px 0 rgba(0,0,0,0.15);
+    padding: 7px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    animation: fadeIn 0.15s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Опции */
+.option {
+    padding: 8px 22px 8px 18px;
+    cursor: pointer;
+    outline: none;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    transition: background 0.13s, color 0.13s;
+}
+.option:hover,
+.option:focus {
+    background: var(--surface-hover, #1d2332);
+    color: #fff;
+}
+
+.selected {
+    background: var(--chip-bg, #252d45);
+}
+
+.tick {
+    font-size: 17px;
+    color: #47ddae;
+    margin-left: auto;
+}
+
+/* Спиннер */
+.spinner {
+    width: 21px;
+    height: 21px;
+    border: 2.3px solid var(--input-border, #374266);
+    border-top: 2.3px solid var(--primary, #2578f7);
+    border-radius: 50%;
+    animation: spinner-rotate 0.8s linear infinite;
+    margin: 7px auto;
+}
+
+@keyframes spinner-rotate {
+    100% { transform: rotate(360deg); }
+}

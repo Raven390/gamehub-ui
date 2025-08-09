@@ -3,26 +3,81 @@
 
 
 :root {
-    --primary: #2578f7;
-    --primary-hover: #388bfa;
-    --background: #161d2b;
-    --hero-gradient-top: #222a44;
-    --hero-gradient-bottom: #172035;
-    --card: #232b41;
-    --card-border: #222a44;
-    --text-main: #fff;
-    --text-light: #aab6cf;
+    /* --- Основные --- */
+    --primary: #3c8dfc; /* чуть ярче для лучшей читаемости */
+    --primary-hover: #559dff;
+    --background: #141a28; /* фон чуть темнее для контраста */
+    --hero-gradient-top: #1e2640;
+    --hero-gradient-bottom: #121a2a;
+    --card: #1b2236; /* карточки темнее, чтобы чипы и бейджи выделялись */
+    --card-border: #252f4b;
+    --text: var(--primary);
+    --text-main: #ffffff;
+    --text-light: #b8c5e0;
     --white: #fff;
-    --muted: #b2bed3;
+    --muted: #a2aec4;
     --border-radius: 16px;
     --radius: 16px;
     --max-width: 1160px;
-    --main-bg: #161d2b;
+    --main-bg: var(--background);
     --spacing-sm: 12px;
     --spacing-md: 24px;
     --spacing-lg: 56px;
-    --shadow: 0 4px 24px 0 rgba(20,30,40,0.10);
-    --surface-alt: #252d45;
+    --shadow: 0 4px 24px 0 rgba(12, 18, 28, 0.25);
+    --surface-alt: #232b41;
+
+    /* --- Дополнения --- */
+    --brand: var(--primary);
+    --brand-bg: #2d4f80;
+    --heading: #fff;
+    --label: #a9b5cd;
+
+    /* Чипы */
+    --chip-bg: #2a3555; /* светлее карточки, но темнее фона */
+    --chip-color: #d4def7;
+    --chip-active-bg: var(--primary);
+    --chip-active-color: #fff;
+
+    /* Бейджи */
+    --badge-bg: #2c3757;
+    --badge: #9cc8ff;
+    --badge-success-bg: #1f3f2a;
+    --badge-success: #48e09c;
+    --badge-warning-bg: #46371a;
+    --badge-warning: #ffd782;
+    --badge-danger-bg: #47272b;
+    --badge-danger: #ff99a8;
+
+    /* Аватары */
+    --avatar-bg: #2b375f;
+    --avatar-border: #3a4774;
+
+    /* Описания */
+    --desc-bg: #232b41;
+    --text-secondary: #c1cadb;
+
+    /* Типы */
+    --type-color: #9dc8ff;
+
+    /* Ошибки */
+    --error: #ff8899;
+
+    /* Skeleton */
+    --skeleton-bg: #1a2235;
+    --skeleton-light: #232b41;
+
+    /* Инпуты */
+    --input-bg: #1f273d;
+    --input-border: #3f4c74;
+    --input-hover: #4d9eff;
+    --input-disabled: #2a324c;
+
+    /* Hover поверхности */
+    --surface-hover: #212a40;
+
+    /* Скроллбар */
+    --scrollbar-bg: #1a2135;
+    --scrollbar-thumb: #4d9eff;
 }
 
 *, *::before, *::after {

@@ -20,21 +20,6 @@ export const ProjectExplorer: React.FC = () => {
     const [hasMore, setHasMore] = useState(true);
     const [page, setPage] = useState(0);
 
-    const mockProject: Project = {
-        id: 'SYNTHETIC-MOCK',
-        name: 'Супер длинное имя проекта для теста отображения, тут даже больше 40 символов',
-        description: 'Очень длинное описание проекта, чтобы проверить fade-out, тултип и максимальную высоту карточки. Здесь ещё дополнительный текст, чтобы точно всё было видно. Очень длинное описание проекта, чтобы проверить fade-out, тултип и максимальную высоту карточки.',
-        shortDescription: 'Очень длинное описание проекта, чтобы проверить fade-out, тултип и максимальную высоту карточки. Здесь ещё дополнительный текст, чтобы точно всё было видно.',
-        status: 'RECRUITING', // попробуй все статусы по очереди: recruiting, active, archived, draft
-        ownerName: 'Иван Тестовый',
-        avatarUrl: '', // проверь и без картинки
-        typeName: "GaveDev",
-        membersCount: 11,
-        technologyNames: ['React', 'TypeScript', 'PostgreSQL', 'Spring Boot', 'GraphQL', 'Docker'],
-        roleNames: ['Backend', 'Frontend', 'DevOps', 'QA'],
-    };
-
-
     const loaderRef = useRef<HTMLDivElement | null>(null);
 
     // Фильтры и поиск (заглушки)
@@ -91,7 +76,7 @@ export const ProjectExplorer: React.FC = () => {
     }, [hasMore, loading]);
 
 
-    const allProjects = [ mockProject, ...projects];
+    const allProjects = [...projects];
 
     return (
         <div className={styles.root}>

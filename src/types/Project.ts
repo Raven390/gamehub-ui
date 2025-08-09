@@ -5,10 +5,16 @@ export interface Project {
     shortDescription: string;
     technologyNames?: string[];
     roleNames?: string[];
-    typeName?: string;
+    type?: ProjectType;
     status?: 'DRAFT' | 'ACTIVE' | 'RECRUITING' | 'ARCHIVED';
     membersCount?: number;
+    ownerId?: string;
     ownerName: string;
     avatarUrl?: string;
     createdAt?: string;
+}
+
+export interface ProjectType {
+    id: string;   // UUID
+    name: string;
 }

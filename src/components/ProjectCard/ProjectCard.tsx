@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './ProjectCard.module.css';
 import { Project } from "../../types/Project";
+import {useNavigate} from "react-router-dom";
 
 const statusLabels: Record<string, string> = {
     RECRUITING: 'recruiting',
@@ -22,6 +23,7 @@ interface ProjectCardProps {
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
+    const navigate = useNavigate();
     const techs = project.technologyNames || [];
     const roles = project.roleNames || [];
     const type = project.typeName || '';
@@ -115,7 +117,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) =>
                 )}
                 <button
                     className={styles.detailsBtn}
-                    onClick={(e) => { e.stopPropagation(); /* переход на детали */ }}
+                    onClick={(e) => {
+                        e.stopPropagation(); /* переход на детали */
+                        navigate(`/project/${project.id}`);
+                    }}
                     tabIndex={0}
                 >
                     Подробнее
