@@ -1,0 +1,24 @@
+.skeleton {
+    background: linear-gradient(
+            90deg,
+            var(--skeleton-bg, #202638) 0%,
+            var(--skeleton-light, #232b41) 40%,
+            var(--skeleton-bg, #202638) 100%
+    );
+    background-size: 180% 100%;
+    animation: skeleton-shimmer 1.3s linear infinite;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    min-width: 32px;
+    min-height: 10px;
+}
+
+@keyframes skeleton-shimmer {
+    0% {
+        background-position-x: -70%;
+    }
+    100% {
+        background-position-x: 180%;
+    }
+}

@@ -1,11 +1,19 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
+import { jwtDecode } from 'jwt-decode';
 
 // Типы
 interface User {
     username: string;
+    businessId?: string;
     email?: string;
     accessToken: string;
     refreshToken: string;
+}
+
+interface JwtPayload {
+    username?: string;
+    email?: string;
+    business_id?: string;
 }
 
 interface AuthContextType {
@@ -30,8 +38,16 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         const refreshToken = localStorage.getItem('refresh_token');
         console.log('[AuthProvider] access:', accessToken, 'refresh:', refreshToken);
         if (accessToken && refreshToken) {
-            // тут можно распарсить JWT и достать email/username, если нужно
-            setUser({ username: 'user', accessToken, refreshToken });
+            const claims = parseJwtClaims(accessToken);
+            const { username, email, business_id } = claims;
+
+            setUser({
+                username: username ?? 'user',
+                email,
+                businessId: business_id,
+                accessToken,
+                refreshToken,
+            });
         }
         setLoading(false); // <- по-любому
     }, []);
@@ -61,3 +77,12 @@ export const useAuth = () => {
     if (!ctx) throw new Error('useAuth должен использоваться внутри AuthProvider');
     return ctx;
 };
+
+function parseJwtClaims(token: string): JwtPayload {
+    try {
+        return jwtDecode<JwtPayload>(token);
+    } catch {
+        return {} as JwtPayload;
+    }
+}
+

@@ -25,7 +25,7 @@ export async function createProject(project: Partial<ProjectCreate>): Promise<Pr
 }
 
 
-export async function updateProject(id: number, update: Partial<Project>): Promise<Project> {
+export async function updateProject(id: string, update: Partial<ProjectCreate>): Promise<Project> {
     return apiFetch<Project>(`/projects/${id}`, {
         method: 'PUT',
         body: JSON.stringify(update),
@@ -35,4 +35,8 @@ export async function updateProject(id: number, update: Partial<Project>): Promi
 // Новый: удалить проект (DELETE)
 export async function deleteProject(id: number): Promise<void> {
     await apiFetch(`/projects/${id}`, { method: 'DELETE' });
+}
+
+export async function fetchProjectById(id: string ): Promise<Project> {
+    return apiFetch<Project>(`/projects/${id}`, { method: 'GET' });
 }
