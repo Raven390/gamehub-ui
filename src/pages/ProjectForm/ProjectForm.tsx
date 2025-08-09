@@ -83,8 +83,7 @@ const ProjectForm: React.FC = () => {
                 typeId,
                 status: "RECRUITING",
                 technologyIds,
-                roleIds,
-                members: [], // если нужно
+                roleIds
             });
 
             // После успеха редирект на список проектов

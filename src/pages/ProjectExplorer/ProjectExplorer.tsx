@@ -1,11 +1,11 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import styles from './ProjectExplorer.module.css';
 import { ProjectExplorerHeader } from '../../components/ProjectExplorerHeader/ProjectExplorerHeader';
-import { ProjectCard } from '../../components/ProjectCard/ProjectCard';
+import { ProjectCard } from './ProjectCard';
 import { fetchProjects } from '../../api/ProjectsApi'; // Твоя функция API
 import { useAuth } from '../../auth/AuthContext';
-import {Project} from "../../types/Project";
 import Header from "../../components/landing/header/Header";
+import {ProjectSummary} from "../../types/domain";
 
 // Тип проекта — расширяем для будущих нужд
 
@@ -14,7 +14,7 @@ const SKELETON_COUNT = 8;
 
 export const ProjectExplorer: React.FC = () => {
     const { user } = useAuth();
-    const [projects, setProjects] = useState<Project[]>([]);
+    const [projects, setProjects] = useState<ProjectSummary[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const [hasMore, setHasMore] = useState(true);
@@ -46,17 +46,27 @@ export const ProjectExplorer: React.FC = () => {
     const loadProjects = useCallback(async () => {
         setLoading(true);
         setError(null);
+
         try {
             const res = await fetchProjects({ page, size: 10, search });
-            setProjects(prev => page === 0 ? res.projects : [...prev, ...res.projects]);
-            setHasMore(res.projects.length === res.size && res.projects.length !== 0);
+
+            setProjects(prev =>
+                page === 0 ? res.projects : [...prev, ...res.projects]
+            );
+
+            // Есть ли ещё проекты для подгрузки
+            const loadedCount = (page + 1) * res.size;
+            setHasMore(loadedCount < res.total);
+
             setTotal(res.total);
         } catch (e) {
+            console.error(e);
             setError('Ошибка загрузки проектов');
         } finally {
             setLoading(false);
         }
     }, [page, search]);
+
 
     useEffect(() => {
         loadProjects();
