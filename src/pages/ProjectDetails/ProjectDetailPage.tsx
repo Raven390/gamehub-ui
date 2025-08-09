@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useAuth } from "../../auth/AuthContext";
-import {Project, ProjectType} from "../../types/Project";
+import {Technology, Role, ProjectType, Project} from "../../types/domain";
 import { ProjectDetailView } from "./ProjectDetailView";
 import { SkeletonField } from "../../components/ui/SkeletonField";
 import { fetchProjectById } from "../../api/ProjectsApi";
@@ -22,8 +22,8 @@ export const ProjectDetailPage: React.FC = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
-    const [technologiesList, setTechnologiesList] = useState<RefItem[]>([]);
-    const [rolesList, setRolesList] = useState<RefItem[]>([]);
+    const [technologiesList, setTechnologiesList] = useState<Technology[]>([]);
+    const [rolesList, setRolesList] = useState<Role[]>([]);
     const [projectTypes, setProjectTypes] = useState<ProjectType[]>([]);
 
     // Получаем проект и справочники
@@ -70,7 +70,7 @@ export const ProjectDetailPage: React.FC = () => {
     }
 
     // Определяем права
-    const isOwner = user?.businessId === project.ownerId || user?.username === project.ownerId;
+    const isOwner = user?.businessId === project.owner.id;
     // TODO: добавить isAdmin/isMember если потребуется
 
     return (
